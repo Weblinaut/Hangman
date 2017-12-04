@@ -1,0 +1,14 @@
+body{
+	background-color: lightsteelblue;
+}
+
+.stickman {
+	height: 250px;
+    width: auto;
+}
+
+.click {
+    margin: 0.2rem;
+}
+
+@media (min-width: 1024px){#letters{width: 25%;}}
