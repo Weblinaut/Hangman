@@ -4,12 +4,16 @@ body {
 }
 
 .jumbotron {
-    background-color: lightgreen;
+    background-color: darkkhaki;
+
 }
 
 .stickman {
+    border: 5px;
+    border-color: saddlebrown;
 	height: 250px;
     width: auto;
+    position: relative;
 }
 
 .click {
@@ -22,11 +26,19 @@ body {
 
 #western {
     background-image: url("https://ih0.redbubble.net/image.5089422.6140/flat,800x800,070,f.jpg");
+    background-repeat: no-repeat;
+    background-size: auto;
 
 }
-#score {
-    color: gold;
+#title {
+    color: black;
+    opacity: 35%;
 }
+
+.score {
+    color: yellow;
+}
+
 
 
 
