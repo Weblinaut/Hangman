@@ -12,7 +12,6 @@ function hangman() {
     var countDown = 7;
     var stickman = document.getElementsByClassName('stickman')[0];
 
-
     // Array of wordbank;
 
     var wordBank = [ "javascript", "internet", "google", "dog", "airplane", "apple", "network", "sleep", "friend", "bootcamp", "function", "element", "class", "object", "pencil", "telephone", "monitor", "battery"];
@@ -35,7 +34,7 @@ function hangman() {
     var interfaceHTML = '';
 
     for (var j = 0; j < abc.length; j++) {
-        interfaceHTML += '<button class="click btn btn-info btn-sm">' + abc[j] + '</button>';
+        interfaceHTML += '<button class="click btn btn-warning btn-sm">' + abc[j] + '</button>';
     }
     userInterface.innerHTML = interfaceHTML;
 
@@ -73,6 +72,10 @@ function hangman() {
         })
 
     }
+
+    var score = document.getElementById("score");
+    score.innerHTML = "<p>Guesses Remaining: " + countDown + " </p>";
+
 
     function checkPuzzle() {
         var spans = document.getElementById("gamespace").getElementsByTagName("span");

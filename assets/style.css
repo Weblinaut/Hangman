@@ -1,5 +1,10 @@
-body{
-	background-color: lightsteelblue;
+body {
+	background-color: darkkhaki;
+    font-family: Chalkboard;
+}
+
+.jumbotron {
+    background-color: lightgreen;
 }
 
 .stickman {
@@ -10,5 +15,20 @@ body{
 .click {
     margin: 0.2rem;
 }
+
+.desert {
+    background-color: bisque;
+}
+
+#western {
+    background-image: url("https://ih0.redbubble.net/image.5089422.6140/flat,800x800,070,f.jpg");
+
+}
+#score {
+    color: gold;
+}
+
+
+
 
 @media (min-width: 1024px){#letters{width: 25%;}}
