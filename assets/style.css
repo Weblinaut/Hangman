@@ -9,9 +9,7 @@ body {
 }
 
 .stickman {
-    background-color: darkkhaki;
-    border: 5px;
-    border-color: saddlebrown;
+    padding:5px;
 	height: 250px;
     width: auto;
     position: relative;
@@ -33,7 +31,6 @@ body {
 }
 #title {
     color: black;
-    opacity: 35%;
 }
 
 .score {
