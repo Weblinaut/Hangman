@@ -1,6 +1,7 @@
 function hangman() {
 
 
+
     var abc = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h',
         'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's',
         't', 'u', 'v', 'w', 'x', 'y', 'z'];
@@ -9,6 +10,7 @@ function hangman() {
 
     var puzzle = [];
     var countDown = 7;
+    var stickman = document.getElementsByClassName('stickman')[0];
 
 
     // Array of wordbank;
@@ -49,7 +51,6 @@ function hangman() {
             if (puzzle.indexOf(letter) === -1) {
                 countDown--;
                 // update hangman pic. according to countdown state
-                var stickman = document.getElementsByClassName('stickman')[0];
                 stickman.src = './assets/images/' + countDown + '.jpg';
 
                 if (countDown === 0) {
@@ -83,6 +84,7 @@ function hangman() {
             setTimeout(function() {
                 alert("CONGRATULATIONS, YOU SURVIVED!!\nPlay Again?");
                 hangman();
+                stickman.src = './assets/images/8.jpg';
             }, 800);
         }
     }
