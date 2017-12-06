@@ -12,8 +12,8 @@ function hangman() {
     var userGuess;
     var usedLetter = [];
     var falseLetters ;
-    var trueLetters ;
-    var countDown = 8;
+    var trueLetters = [];
+    var countDown = 7;
 
 
 
@@ -52,31 +52,47 @@ function hangman() {
             var btn = evt.target;
             var letter = btn.innerText;
             btn.disabled = true;
+
             if (puzzle.indexOf(letter) === -1) {
                 countDown--;
-                console.log(countDown);//added from here down
-
                 // update hangman pic. according to countdown state
                 var stickman = document.getElementsByClassName('stickman')[0];
                 stickman.src = './assets/images/' + countDown + '.jpg';
 
                 if (countDown === 0) {
-                    alert("Game Over!!! Try again?");
+                    var puzzleJoin = puzzle.join('');
+                    alert("Game Over!!! The answer was " + puzzleJoin + " Try again?");
+                    hangman();
                     //reset photo src here
                     stickman.src = './assets/images/8.jpg';
-                    hangman();
                 }
             } else {
                 var solvePuzzle = document.getElementsByClassName(letter);
+
                 for (var l = 0; l < solvePuzzle.length; l++) {
                     solvePuzzle[l].innerText = letter;
                 }
                 // if puzzle solved, show 'you won' and reset game.
+                checkPuzzle()
             }
+
         })
+
     }
 
-
+    function checkPuzzle() {
+        var spans = document.getElementById("gamespace").getElementsByTagName("span");
+        var spanLetters = '';
+        for (var z = 0; z < spans.length; z++) {
+            spanLetters += spans[z].innerText;
+        }
+        if ( spanLetters.indexOf('_') === -1 ) {
+            setTimeout(function() {
+                alert("FUCK YES!! IT WORKED!!");
+                hangman();
+            }, 800);
+        }
+    }
 
 }
 
