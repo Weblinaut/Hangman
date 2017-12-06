@@ -8,19 +8,12 @@ function hangman() {
 
 
     var puzzle = [];
-    var wordLength;
-    var userGuess;
-    var usedLetter = [];
-    var falseLetters ;
-    var trueLetters = [];
     var countDown = 7;
-
-
 
 
     // Array of wordbank;
 
-    var wordBank = [ "javascript", "internet", "google", "dog", "airplane", "apple", "network", "sleep", "friend", "bootcamp", "function", "element", "class"];
+    var wordBank = [ "javascript", "internet", "google", "dog", "airplane", "apple", "network", "sleep", "friend", "bootcamp", "function", "element", "class", "object", "pencil", "telephone", "monitor", "battery"];
 
     // chose random puzzle word
     var randomIndex = Math.floor(Math.random() * wordBank.length);
@@ -88,7 +81,7 @@ function hangman() {
         }
         if ( spanLetters.indexOf('_') === -1 ) {
             setTimeout(function() {
-                alert("FUCK YES!! IT WORKED!!");
+                alert("CONGRATULATIONS, YOU SURVIVED!!\nPlay Again?");
                 hangman();
             }, 800);
         }
