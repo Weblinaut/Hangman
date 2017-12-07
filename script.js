@@ -56,6 +56,7 @@ function hangman() {
             if (puzzle.indexOf(letter) === -1) {
                 countDown--;
                 badAnswer.play();
+                score.innerHTML = "<p>Guesses Remaining: " + countDown + " </p>";
                 // update hangman pic. according to countdown state
                 stickman.src = './assets/images/' + countDown + '.jpg';
 
