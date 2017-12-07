@@ -11,6 +11,12 @@ function hangman() {
     var puzzle = [];
     var countDown = 7;
     var stickman = document.getElementsByClassName('stickman')[0];
+    var badAnswer = new Audio("./assets/audio/rico.mp3");
+    var introAudio = new Audio("./assets/audio/intro.mp3");
+    var goodAnswer = new Audio("./assets/audio/gun.mp3");
+
+    introAudio.play()
+
 
     // Array of wordbank;
 
@@ -49,6 +55,7 @@ function hangman() {
 
             if (puzzle.indexOf(letter) === -1) {
                 countDown--;
+                badAnswer.play();
                 // update hangman pic. according to countdown state
                 stickman.src = './assets/images/' + countDown + '.jpg';
 
@@ -64,6 +71,7 @@ function hangman() {
 
                 for (var l = 0; l < solvePuzzle.length; l++) {
                     solvePuzzle[l].innerText = letter;
+                    goodAnswer.play();
                 }
                 // if puzzle solved, show 'you won' and reset game.
                 checkPuzzle()
